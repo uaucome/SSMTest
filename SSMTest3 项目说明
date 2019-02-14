@@ -1,0 +1,23 @@
+目前该项目中只做了登陆功能，好多功能待完善，目前建立的表有2个：t_ssm_account , t_ssm_user.
+部分说明：
+1. 建表
+1.1 Account 表
+CREATE TABLE T_SSM_ACCOUNT (
+  ID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '主键id',
+  ACCOUNT VARCHAR(20) COMMENT '账号',
+  PASSWORD VARCHAR(50) COMMENT '密码'
+) 
+
+1.2 USER 表
+CREATE TABLE T_SSM_USER (
+  ID int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '主键id',
+  USERNAME VARCHAR(20) DEFAULT NULL COMMENT '用户姓名',
+  AGE VARCHAR(20) DEFAULT NULL COMMENT '用户年龄',
+  SEX VARCHAR(20) DEFAULT NULL COMMENT '用户性别',
+  ACCOUNTID INTEGER NOT NULL COMMENT '账号id'
+)
+
+1.3 插入数据(随意填一些数据即可)
+
+2. 关于退出功能这块，采用的是Session清除。后台提示用户上线的功能是写在监听器里面的，下线功能卸载系统控制器里，
+感觉这样写不太好，以后有时间再优化。
