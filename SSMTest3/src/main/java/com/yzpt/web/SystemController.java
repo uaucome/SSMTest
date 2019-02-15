@@ -49,11 +49,17 @@ public class SystemController {
 	
 	//首页
 	@RequestMapping(value="/index",method=RequestMethod.GET)
-	public String getIndeJsp() {
+	public String getIndexJsp() {
 		return "index";
 	}
 	
-	//退出
+	//主页
+	@RequestMapping(value="/home",method=RequestMethod.GET)
+	public String getHomeJsp() {
+		return "home";
+	}
+	
+	//退出	
 	@RequestMapping(value="/exit",method=RequestMethod.GET)
 	public String exit(HttpServletRequest request) {
 		//要是购物车的话最好用这个removeAttribute,清空session

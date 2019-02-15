@@ -27,7 +27,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			if (user == null) {
 				logger.info("拦截跳转至login页面！");		
 				request.getSession().setAttribute("msg", "您未登录，请先登录!");
-				request.getRequestDispatcher("WEB-INF/jsp/login.jsp").forward(request, response);
+				request.getRequestDispatcher("login").forward(request, response);
 				return false;
 			} else
 				request.getSession().setAttribute("msg", "");

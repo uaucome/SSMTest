@@ -117,7 +117,7 @@
 		<div style="font-size: 18px; font-weight: bold; padding-top: 50px; text-align: center;">
 			<a href="javascript:void(0)" style="text-decoration: none; color: black;" onclick="login()">Login</a>
 			&nbsp;&nbsp; 
-			<a href="javascript:history.back(-1)" style="text-decoration: none; color: black;">Back</a>
+			<a href="home" style="text-decoration: none; color: black;">Back</a>
 		</div>
 	</div>
 </body>
