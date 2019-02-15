@@ -8,19 +8,19 @@ import org.springframework.stereotype.Service;
 
 import com.yzpt.entity.Account;
 import com.yzpt.entity.User;
-import com.yzpt.mapper.SystemMapper;
+import com.yzpt.mapper.LoginMapper;
 import com.yzpt.mapper.UserMapper;
-import com.yzpt.service.SystemService;
+import com.yzpt.service.LoginService;
 
 @Service
-public class SystemServiceimpl implements SystemService {
+public class LoginServiceimpl implements LoginService {
 	
-	private static final Logger logger = LogManager.getLogger(SystemServiceimpl.class);
-	private SystemMapper systemMapper;
+	private static final Logger logger = LogManager.getLogger(LoginServiceimpl.class);
+	private LoginMapper systemMapper;
 	private UserMapper userMapper;
 	
 	@Autowired
-	public SystemServiceimpl(SystemMapper systemMapper,UserMapper userMapper) {
+	public LoginServiceimpl(LoginMapper systemMapper,UserMapper userMapper) {
 		this.systemMapper = systemMapper;
 		this.userMapper = userMapper;
 	}

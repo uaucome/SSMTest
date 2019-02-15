@@ -2,7 +2,7 @@ package com.yzpt.mapper;
 
 import com.yzpt.entity.Account;
 
-public interface SystemMapper {
+public interface LoginMapper {
 
 	Account getAccountInfo(String account);
 

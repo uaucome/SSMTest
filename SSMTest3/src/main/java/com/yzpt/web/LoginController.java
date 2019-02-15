@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yzpt.entity.User;
-import com.yzpt.service.SystemService;
+import com.yzpt.service.LoginService;
 import com.yzpt.utils.CommonUtils;
 
 @Controller
-public class SystemController {
+public class LoginController {
 	
-	private static final Logger logger = LogManager.getLogger(SystemController.class);
-	private SystemService systemService;
+	private static final Logger logger = LogManager.getLogger(LoginController.class);
+	private LoginService systemService;
 	
 	@Autowired
-	public SystemController(SystemService systemService) {
+	public LoginController(LoginService systemService) {
 		this.systemService = systemService;
 	}
 	
