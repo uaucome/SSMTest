@@ -18,11 +18,11 @@ import com.yzpt.utils.CommonUtils;
 public class LoginController {
 	
 	private static final Logger logger = LogManager.getLogger(LoginController.class);
-	private LoginService systemService;
+	private LoginService loginService;
 	
 	@Autowired
-	public LoginController(LoginService systemService) {
-		this.systemService = systemService;
+	public LoginController(LoginService loginService) {
+		this.loginService = loginService;
 	}
 	
 	//登录页面
@@ -43,7 +43,7 @@ public class LoginController {
 	public String login(HttpServletRequest request) {
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");
-		String message = systemService.getAccountInfo(request,account,password);
+		String message = loginService.getAccountInfo(request,account,password);
 		return message;
 	}
 	
