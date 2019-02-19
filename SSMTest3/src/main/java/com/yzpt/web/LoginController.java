@@ -54,7 +54,7 @@ public class LoginController {
 	}
 	
 	//主页
-	@RequestMapping(value="/home",method=RequestMethod.GET)
+	@RequestMapping(value="/",method=RequestMethod.GET)
 	public String getHomeJsp() {
 		return "home";
 	}

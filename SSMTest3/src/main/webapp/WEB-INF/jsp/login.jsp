@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="<%=request.getContextPath()%>/">
 <title>登录</title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 <script type="text/javascript">
 	$(function(){
 		var msg = '${msg}';
@@ -117,7 +117,7 @@
 		<div style="font-size: 18px; font-weight: bold; padding-top: 50px; text-align: center;">
 			<a href="javascript:void(0)" style="text-decoration: none; color: black;" onclick="login()">Login</a>
 			&nbsp;&nbsp; 
-			<a href="home" style="text-decoration: none; color: black;">Back</a>
+			<a href="" style="text-decoration: none; color: black;">Back</a>
 		</div>
 	</div>
 </body>

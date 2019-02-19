@@ -34,7 +34,6 @@
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping path="/registe"/>
 			<mvc:exclude-mapping path="/login"/>
-			<mvc:exclude-mapping path="/home"/>
 			<bean class="com.yzpt.interceptor.LoginInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>

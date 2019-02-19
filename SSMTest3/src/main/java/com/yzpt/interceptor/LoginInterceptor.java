@@ -19,7 +19,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		String requestUri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String url = requestUri.substring(contextPath.length());
-		if ("/login".equals(url)) {
+		if ("/login".equals(url) || "/".equals(url)) {
 			request.getSession().setAttribute("msg", "");
 			return true;
 		} else {
