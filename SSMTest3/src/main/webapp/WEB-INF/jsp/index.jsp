@@ -7,12 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="<%=request.getContextPath()%>/">
 <title>首页</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+	//跳转至用户信息页面
+	function userInfo(){
+		window.location.href="userInfo";
+	}
+	
+</script>
 </head>
 <body style="text-align: center">
 	<div style="background-color: #00FFFF;width: 650px;height: 350px;margin-left: 450px;padding-top: 5px;">
-	<div style="text-align:left;font-size:16px;font-weight: bold;">欢迎您， ${user.username }${user.sex == "男" ? "先生" : "女士" }！</div>
-	<div style="text-align:right;font-size:16px;font-weight: bold;">
-	<a href="javascript:void(0)" style="text-decoration: none; color: black;">个人信息</a>&nbsp;&nbsp;
+	<div style="text-align:left;font-size:15px;font-weight: bold;">欢迎您， ${user.username }!</div>
+	<div style="text-align:right;font-size:15px;font-weight: bold;">
+	<a href="javascript:void(0)" style="text-decoration: none; color: black;" onclick="userInfo()">个人信息</a>&nbsp;&nbsp;
 	<a href="exit" style="text-decoration: none; color: black;">退出</a>
 	</div>	
 	</div>
