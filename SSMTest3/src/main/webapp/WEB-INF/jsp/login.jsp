@@ -53,7 +53,7 @@
 	//密码校验
 	function passwordCheck(){
 		var password = $("#password").val();
-		var regLength = new RegExp("^[0-9]{1,11}$");
+		var regLength = new RegExp("^[A-Za-z0-9]{1,11}$");
 		
 		//判断密码不为空
 		if(password == null || password == ""){
@@ -76,24 +76,26 @@
 	
 	//登陆校验
 	function login(){
-		var account = $("#account").val();
-		var password = $("#password").val();
 		var accountResult = accountCheck();
 		var pwResult = passwordCheck();
+		
 		//alert(accountResult);
 		//alert(pwResult);
 		if(!accountResult || !pwResult ){
 			return false;
 		}
+		
 		//全部符合标准的话，执行ajax
 		//alert("即将进入post请求");
+		var account = $("#account").val();
+		var password = $("#password").val();
 		var url = "login";
 		$.ajax({
 			url: url,
 			type: 'post',
 			data: {"account":account,"password":password},
 			success:function(data){
-				if(data != "该账号可以登录"){
+				if(data != "success"){
 					alert(data);
 				}else{
 					//跳转首页

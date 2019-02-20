@@ -13,23 +13,24 @@ import com.yzpt.mapper.UserMapper;
 import com.yzpt.service.LoginService;
 
 @Service
-public class LoginServiceimpl implements LoginService {
+public class LoginServiceImpl implements LoginService {
 	
-	private static final Logger logger = LogManager.getLogger(LoginServiceimpl.class);
-	private LoginMapper systemMapper;
+	private static final Logger logger = LogManager.getLogger(LoginServiceImpl.class);
+	private LoginMapper loginMapper;
 	private UserMapper userMapper;
 	
 	@Autowired
-	public LoginServiceimpl(LoginMapper systemMapper,UserMapper userMapper) {
-		this.systemMapper = systemMapper;
+	public LoginServiceImpl(LoginMapper loginMapper,UserMapper userMapper) {
+		this.loginMapper = loginMapper;
 		this.userMapper = userMapper;
 	}
+
 
 	@Override
 	public String getAccountInfo(HttpServletRequest request,String account, String password) {
 		String message = "";
 		try {
-			Account accounts = systemMapper.getAccountInfo(account);
+			Account accounts = loginMapper.getAccountInfo(account);
 			if(accounts != null) {
 				//账号存在
 				if(accounts.getPassword().equals(password)) {
@@ -37,7 +38,7 @@ public class LoginServiceimpl implements LoginService {
 					//保存用户信息
 					User user = userMapper.getUserInfo(accounts.getId());	
 					request.getSession().setAttribute("user", user);
-					message = "该账号可以登录";
+					message = "success";
 				}else {
 					message = "密码错误";
 				}	
